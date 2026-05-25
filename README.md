@@ -5,7 +5,17 @@
 [![Hackathon](https://img.shields.io/badge/Hackathon-daily.dev-FF6C37?logo=dailydotdev&logoColor=white)](https://hackathon.daily.dev)
 [![Frontend](https://img.shields.io/badge/Frontend-React+Vite-61DAFB?logo=react&logoColor=white)](https://react.dev)
 [![Backend](https://img.shields.io/badge/Backend-FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
-[![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
+[![Live](https://img.shields.io/badge/Live-demo-10B981)](https://dev-hourney-roadmap.vercel.app)
+
+## 🖼️ Screenshots
+
+### Landing Page
+
+![Dev Journey Roadmap - Landing Page](./homescreen.png)
+
+### Your 7-Day Roadmap
+
+![Dev Journey Roadmap - Learning Plan](./roadmap.png)
 
 ## Overview
 
@@ -103,12 +113,12 @@ VITE_API_URL=http://your-backend-url.com
 ┌─────────────┐       ┌──────────────┐       ┌──────────────────┐
 │   Browser   │──────▶│   Frontend   │──────▶│     Backend      │
 │  (Vite dev) │  /api  │ (React+Vite) │ /api   │    (FastAPI)     │
-└─────────────┘       └──────────────┘       └────────┬─────────┘
+└─────────────┘       └──────────────┘       └─────────────────┘
                                                       │
                                           ┌───────────▼───────────┐
                                           │   daily.dev API       │
                                           │   (Bearer auth)       │
-                                          └───────────────────────┘
+                                          ───────────────────────┘
 ```
 
 ### Project Structure
