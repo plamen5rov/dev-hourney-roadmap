@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: dev-journey-roadmap-api
+    env: python
+    region: frankfurt
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.18
+      - key: API_key
+        sync: false
