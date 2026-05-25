@@ -60,3 +60,13 @@
 - Also fixed stale accent color (`accent-bun`) in loading spinner
 - App now navigates to `/roadmap/:handle` and renders correctly
 - Files: `frontend/src/App.tsx`
+
+### `de6f79d` — feat: user-provided API token for public deployment
+- Added token input field on landing page (masked, with show/hide toggle)
+- Frontend sends token via Authorization header per-request
+- Backend accepts Authorization header, falls back to `.env` for local dev
+- Returns 401 if no token provided and no `.env` fallback
+- Token never stored server-side — passed through only
+- Added error display on landing page for failed requests
+- Link to `daily.dev/settings/api` for token generation
+- Files: `HandleInput.tsx`, `InputPage.tsx`, `App.tsx`, `roadmap.ts`, `main.py`
