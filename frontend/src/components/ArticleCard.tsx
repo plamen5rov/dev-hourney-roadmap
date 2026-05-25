@@ -11,11 +11,11 @@ export function ArticleCard({ article }: ArticleCardProps) {
       href={article.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="block p-4 bg-bg-subtle border border-border-primary rounded-lg hover:bg-surface-hover transition-colors group"
+      className="block p-4 bg-bg-surface border border-border-default rounded-lg hover:bg-surface-hover transition-colors group"
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1 min-w-0">
-          <h4 className="text-text-primary text-base font-medium group-hover:text-accent-water transition-colors truncate">
+          <h4 className="text-text-primary text-base font-medium group-hover:text-accent-primary transition-colors truncate">
             {article.title}
           </h4>
           {article.summary && (
@@ -53,7 +53,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
               {article.tags.slice(0, 4).map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-0.5 bg-accent-onion-flat text-accent-onion text-xs rounded-full font-medium"
+                  className="px-2 py-0.5 bg-accent-primary-flat text-accent-primary text-xs rounded-full font-medium"
                 >
                   #{tag}
                 </span>
@@ -66,7 +66,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
             </div>
           )}
         </div>
-        <ExternalLink className="w-4 h-4 text-text-tertiary group-hover:text-accent-water transition-colors flex-shrink-0 mt-1" />
+        <ExternalLink className="w-4 h-4 text-text-tertiary group-hover:text-accent-primary transition-colors flex-shrink-0 mt-1" />
       </div>
     </a>
   )

@@ -24,14 +24,14 @@ export function HandleInput({ onSubmit, loading = false }: HandleInputProps) {
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder="username"
-          className="w-full pl-10 pr-4 py-3 bg-bg-subtle border border-border-primary rounded-md text-text-primary text-base placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent-blueCheese transition-shadow"
+          className="w-full pl-10 pr-4 py-3 bg-bg-surface border border-border-default rounded-md text-text-primary text-base placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent-primary/50 transition-shadow"
           disabled={loading}
         />
       </div>
       <button
         type="submit"
         disabled={loading || !value.trim()}
-        className="mt-4 w-full py-3 px-8 bg-accent-bun text-bg-default font-semibold text-base rounded-full hover:bg-accent-bun-bolder transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="mt-4 w-full py-3 px-8 bg-accent-primary text-bg-default font-semibold text-base rounded-full hover:bg-accent-primary-hover transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
         {loading ? (
           <span className="w-5 h-5 border-2 border-bg-default/30 border-t-bg-default rounded-full animate-spin" />

@@ -54,7 +54,7 @@ export function RoadmapPage({ data, handle }: RoadmapPageProps) {
             Create your own roadmap at{' '}
             <a
               href="/"
-              className="text-accent-water hover:underline"
+              className="text-accent-primary hover:underline"
             >
               devjourney.roadmap
             </a>

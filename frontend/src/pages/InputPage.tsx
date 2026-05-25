@@ -1,4 +1,4 @@
-import { BookOpen, Dna, Share2, Zap, BookMarked, Target, TrendingUp } from 'lucide-react'
+import { BookOpen, Dna, Share2, Zap, BookMarked } from 'lucide-react'
 import { Header } from '../components/Header'
 import { HandleInput } from '../components/HandleInput'
 
@@ -12,19 +12,16 @@ const features = [
     icon: BookMarked,
     title: '7-Day Roadmap',
     desc: 'Your saved articles organized into a focused learning plan',
-    color: 'accent-burger',
   },
   {
     icon: Dna,
     title: 'Developer DNA',
     desc: 'Your tech stack, experience, and reputation at a glance',
-    color: 'accent-onion',
   },
   {
     icon: Share2,
     title: 'Shareable',
     desc: 'Share your learning journey with a public link',
-    color: 'accent-water',
   },
 ]
 
@@ -34,8 +31,8 @@ export function InputPage({ onSubmit, loading }: InputPageProps) {
       <Header />
       <main className="flex flex-col items-center justify-center px-6 py-16">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-accent-bun-flat mb-6">
-            <BookOpen className="w-8 h-8 text-accent-bun" />
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-accent-primary-flat mb-6">
+            <BookOpen className="w-8 h-8 text-accent-primary" />
           </div>
           <h1 className="text-text-primary text-4xl font-bold tracking-tight">
             Dev Journey Roadmap
@@ -51,10 +48,10 @@ export function InputPage({ onSubmit, loading }: InputPageProps) {
           {features.map((f) => (
             <div
               key={f.title}
-              className="p-6 bg-bg-subtle border border-border-subtle rounded-xl text-center hover:bg-surface-hover transition-colors"
+              className="p-6 bg-bg-surface border border-border-default rounded-xl text-center hover:bg-surface-hover transition-colors"
             >
-              <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-${f.color}-flat mb-4`}>
-                <f.icon className={`w-6 h-6 text-${f.color}`} />
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent-primary-flat mb-4">
+                <f.icon className="w-6 h-6 text-accent-primary" />
               </div>
               <h3 className="text-text-primary text-lg font-semibold">{f.title}</h3>
               <p className="mt-1 text-text-tertiary text-sm">{f.desc}</p>
@@ -63,7 +60,7 @@ export function InputPage({ onSubmit, loading }: InputPageProps) {
         </div>
 
         <div className="mt-12 text-text-tertiary text-xs flex items-center gap-2">
-          <Zap className="w-3.5 h-3.5 text-accent-cheese" />
+          <Zap className="w-3.5 h-3.5 text-accent-primary" />
           Powered by daily.dev Plus
         </div>
       </main>
