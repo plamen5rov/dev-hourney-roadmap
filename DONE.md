@@ -80,3 +80,12 @@
 - **Dynamic document title** and OG tags when viewing a roadmap
 - **Header** now has Card (download) + Share (copy link) buttons
 - Files: `App.tsx`, `RoadmapPage.tsx`, `Header.tsx`, `ShareCard.tsx`, `Toast.tsx`, `index.html`, `vite.config.ts`
+
+### `b5e65f3` — feat: add social share buttons for X, LinkedIn, Facebook
+- Share button now opens dropdown with social platform options
+- X (Twitter): opens tweet intent with pre-filled URL and text
+- LinkedIn: opens share dialog with roadmap URL
+- Facebook: opens share dialog with roadmap URL
+- Copy Link option at bottom of dropdown
+- Dropdown closes on outside click or selection
+- Files: `Header.tsx`, `RoadmapPage.tsx`
