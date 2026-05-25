@@ -4,30 +4,31 @@ Aligned with daily.dev's design system for visual consistency.
 
 ## Design Tokens (Tailwind Config)
 
-### Colors — Dark Theme Default (daily.dev palette)
+### Colors — Dark Theme
 
 | Token | Hex | Usage |
 |-------|-----|-------|
-| `bg-default` | `#0e1217` | Page background |
-| `bg-subtle` | `#1c1f26` | Card/post surfaces |
-| `bg-popover` | `#1c1f26` | Dropdowns, modals |
-| `text-primary` | `#ffffff` | Headings, primary labels |
-| `text-secondary` | `#cfd6e6` | Body text, descriptions |
-| `text-tertiary` | `#a8b3cf` | Muted text, timestamps, tags |
-| `border-primary` | `#525866` | Card borders, dividers |
-| `border-subtle` | `rgba(168,179,207,0.4)` | Subtle separators |
+| `bg-default` | `#0A0A0A` | Page background |
+| `bg-surface` | `#151515` | Card/post surfaces |
+| `bg-elevated` | `#1A1A1A` | Modals, popovers |
+| `text-primary` | `#F2F2F2` | Headings, primary labels |
+| `text-secondary` | `#A1A1A1` | Body text, descriptions |
+| `text-tertiary` | `#8E8E8E` | Muted text, timestamps |
+| `border-default` | `#2A2A2A` | Card borders, dividers |
 
-### Brand Accent Colors (food-themed)
+### Brand Accent
 
 | Token | Hex | Usage |
 |-------|-----|-------|
-| `accent-burger` | `#ad6648` | Roadmap day headers, progress |
-| `accent-bun` | `#ff8e3b` | CTAs, highlights |
-| `accent-cheese` | `#ffe923` | Warnings, streaks |
-| `accent-avocado` | `#39e58c` | Success, completed items |
-| `accent-water` | `#427ef7` | Links, info |
-| `accent-onion` | `#7147ed` | Developer DNA, stack tags |
-| `accent-cabbage` | `#ce3df3` | Premium/Plus indicators |
+| `accent-primary` | `#7149e6` | CTAs, links, buttons, tags |
+| `accent-primary-hover` | `#5a3ab8` | Hover state |
+| `accent-primary-active` | `#4a2f99` | Active/pressed |
+| `accent-primary-flat` | `rgba(113,73,230,0.12)` | Tag backgrounds, icon containers |
+| `accent-secondary` | `#5a3ab8` | Secondary actions |
+| `success` | `#5CFF5E` | Completed items, checkmarks |
+| `warning` | `#FFB800` | Warnings |
+| `error` | `#FF4444` | Errors |
+| `info` | `#5C9BFA` | Info badges |
 | `accent-bacon` | `#fc538d` | Upvotes, engagement |
 | `accent-ketchup` | `#e04337` | Errors, overdue |
 | `accent-blueCheese` | `#2cdce6` | Active states, focus rings |
