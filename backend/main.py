@@ -27,24 +27,27 @@ ALLOWED_ORIGINS = [
 
 @app.middleware("http")
 async def cors_middleware(request: Request, call_next):
-    origin = request.headers.get("origin")
+    origin = request.headers.get("origin", "")
+    allowed = origin in ALLOWED_ORIGINS or origin == ""
+
+    if request.method == "OPTIONS":
+        response = JSONResponse(content={}, status_code=200)
+        if allowed:
+            response.headers["Access-Control-Allow-Origin"] = origin if origin else "*"
+            response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
+            response.headers["Access-Control-Allow-Headers"] = "Authorization, Content-Type, Accept"
+            response.headers["Access-Control-Allow-Credentials"] = "true"
+            response.headers["Access-Control-Max-Age"] = "600"
+        return response
+
     response = await call_next(request)
-    if origin in ALLOWED_ORIGINS:
-        response.headers["Access-Control-Allow-Origin"] = origin
+    if allowed:
+        response.headers["Access-Control-Allow-Origin"] = origin if origin else "*"
         response.headers["Access-Control-Allow-Credentials"] = "true"
         response.headers["Access-Control-Allow-Methods"] = "*"
         response.headers["Access-Control-Allow-Headers"] = "*"
         response.headers["Access-Control-Expose-Headers"] = "*"
     return response
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-    expose_headers=["*"],
-)
 
 
 class Source(BaseModel):
@@ -261,18 +264,6 @@ def categorize_articles(bookmarks: list[dict]) -> list[DayPlan]:
 @app.get("/api/health")
 async def health():
     return {"status": "ok", "timestamp": datetime.utcnow().isoformat()}
-
-
-@app.options("/api/roadmap")
-async def roadmap_preflight():
-    return JSONResponse(
-        status_code=200,
-        headers={
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET, OPTIONS",
-            "Access-Control-Allow-Headers": "Authorization, Content-Type",
-        },
-    )
 
 
 @app.get("/api/roadmap", response_model=RoadmapResponse)
