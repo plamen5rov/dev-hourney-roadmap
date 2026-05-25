@@ -44,3 +44,19 @@
 - Borders: `#2A2A2A`
 - Updated all components to use new tokens
 - Files: `frontend/src/index.css`, all component/page files
+
+### `8847174` — feat: add pink #ea618c as secondary accent color
+- Profile avatar border uses secondary pink
+- Stack tags and article tags use pink instead of purple
+- Day card left border uses pink
+- Header logo icon uses pink
+- Primary purple stays for CTAs and main actions
+- Added hover/active variants for secondary
+- Files: `frontend/src/index.css`, `DeveloperDNA.tsx`, `ArticleCard.tsx`, `DayCard.tsx`, `Header.tsx`
+
+### `90d32ee` — fix: resolve React hooks order violation blocking roadmap navigation
+- `useParams()` was called conditionally inside a ternary expression
+- Extracted `RoadmapRoute` as a proper component that always calls hooks
+- Also fixed stale accent color (`accent-bun`) in loading spinner
+- App now navigates to `/roadmap/:handle` and renders correctly
+- Files: `frontend/src/App.tsx`
