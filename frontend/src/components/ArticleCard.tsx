@@ -53,7 +53,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
               {article.tags.slice(0, 4).map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-0.5 bg-accent-primary-flat text-accent-primary text-xs rounded-full font-medium"
+                  className="px-2 py-0.5 bg-accent-secondary-flat text-accent-secondary text-xs rounded-full font-medium"
                 >
                   #{tag}
                 </span>

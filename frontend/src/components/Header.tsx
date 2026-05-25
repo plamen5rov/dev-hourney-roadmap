@@ -10,7 +10,7 @@ export function Header({ title = 'Dev Journey Roadmap', showShare = false, onSha
   return (
     <header className="flex items-center justify-between px-6 py-4 border-b border-border-default bg-bg-surface/80 backdrop-blur-sm sticky top-0 z-50">
       <div className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded-md bg-accent-primary flex items-center justify-center">
+        <div className="w-8 h-8 rounded-md bg-accent-secondary flex items-center justify-center">
           <BookOpen className="w-4 h-4 text-bg-default" />
         </div>
         <span className="text-base font-semibold text-text-primary">{title}</span>

@@ -10,7 +10,7 @@ interface DayCardProps {
 export function DayCard({ day, onToggleComplete }: DayCardProps) {
   return (
     <div className="bg-bg-surface border border-border-default rounded-xl overflow-hidden">
-      <div className="px-6 py-4 border-l-[3px] border-accent-primary flex items-center justify-between">
+      <div className="px-6 py-4 border-l-[3px] border-accent-secondary flex items-center justify-between">
         <div>
           <h3 className="text-text-primary text-xl font-bold">
             Day {day.day}: {day.topic}

@@ -25,10 +25,12 @@
   --color-accent-primary-flat: rgba(113, 73, 230, 0.12);
   --color-accent-primary-subtle: rgba(113, 73, 230, 0.08);
 
-  /* Secondary Accent — Purple Light */
-  --color-accent-secondary: #5a3ab8;
-  --color-accent-secondary-hover: #7149e6;
-  --color-accent-secondary-flat: rgba(90, 58, 184, 0.12);
+  /* Secondary Accent — Pink */
+  --color-accent-secondary: #ea618c;
+  --color-accent-secondary-hover: #d14a74;
+  --color-accent-secondary-active: #b83d64;
+  --color-accent-secondary-flat: rgba(234, 97, 140, 0.12);
+  --color-accent-secondary-subtle: rgba(234, 97, 140, 0.08);
 
   /* Status Colors */
   --color-success: #5CFF5E;

@@ -17,7 +17,7 @@ export function DeveloperDNA({ profile, stack, experiences }: DeveloperDNAProps)
           <img
             src={profile.image}
             alt={profile.name || 'Profile'}
-            className="w-16 h-16 rounded-full border-2 border-accent-primary"
+            className="w-16 h-16 rounded-full border-2 border-accent-secondary"
           />
         )}
         <div className="flex-1">
@@ -68,7 +68,7 @@ export function DeveloperDNA({ profile, stack, experiences }: DeveloperDNAProps)
             {stack.map((item) => (
               <span
                 key={item.id}
-                className="px-3 py-1 bg-accent-primary-flat text-accent-primary text-sm rounded-full font-medium flex items-center gap-1.5"
+                className="px-3 py-1 bg-accent-secondary-flat text-accent-secondary text-sm rounded-full font-medium flex items-center gap-1.5"
               >
                 {item.tool.faviconUrl && (
                   <img
