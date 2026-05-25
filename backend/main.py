@@ -7,8 +7,9 @@ from typing import Optional
 
 import httpx
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException, Query, Header
+from fastapi import FastAPI, HTTPException, Query, Header, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
 load_dotenv()
@@ -18,13 +19,27 @@ DAILY_DEV_API = "https://api.daily.dev/public/v1"
 
 app = FastAPI(title="Dev Journey Roadmap API")
 
+ALLOWED_ORIGINS = [
+    "https://dev-hourney-roadmap.vercel.app",
+    "http://localhost:5173",
+    "http://localhost:5174",
+]
+
+@app.middleware("http")
+async def cors_middleware(request: Request, call_next):
+    origin = request.headers.get("origin")
+    response = await call_next(request)
+    if origin in ALLOWED_ORIGINS:
+        response.headers["Access-Control-Allow-Origin"] = origin
+        response.headers["Access-Control-Allow-Credentials"] = "true"
+        response.headers["Access-Control-Allow-Methods"] = "*"
+        response.headers["Access-Control-Allow-Headers"] = "*"
+        response.headers["Access-Control-Expose-Headers"] = "*"
+    return response
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://dev-hourney-roadmap.vercel.app",
-        "http://localhost:5173",
-        "http://localhost:5174",
-    ],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -246,6 +261,18 @@ def categorize_articles(bookmarks: list[dict]) -> list[DayPlan]:
 @app.get("/api/health")
 async def health():
     return {"status": "ok", "timestamp": datetime.utcnow().isoformat()}
+
+
+@app.options("/api/roadmap")
+async def roadmap_preflight():
+    return JSONResponse(
+        status_code=200,
+        headers={
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, OPTIONS",
+            "Access-Control-Allow-Headers": "Authorization, Content-Type",
+        },
+    )
 
 
 @app.get("/api/roadmap", response_model=RoadmapResponse)
